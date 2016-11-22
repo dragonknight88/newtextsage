@@ -21,6 +21,9 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+ALLOWED_HOSTS = [
+  '.textsageone.herokuapp.com'
+]
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
