@@ -24,16 +24,16 @@ MANAGERS = ADMINS
 ALLOWED_HOSTS = [
   '.textsageone.herokuapp.com'
 ]
-#DATABASES = {
- #   'default': {
- #       'ENGINE': 'django.db.backends.sqlite3',
-  #      'NAME': 'textsage.db',
-   #     'USER': '',
-    #    'PASSWORD': '',
-     #   'HOST': '',
-   #     'PORT': '',
-   # }
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'textsage',
+        'USER': 'prpawar',
+        'PASSWORD': 'admin',
+        'HOST': '',
+        'PORT': '',
+    }
+}
 
 # Update database configuration with $DATABASE_URL.
 
