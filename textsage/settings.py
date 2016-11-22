@@ -1,7 +1,7 @@
 # Django settings for textsage project.
 
 import os
-
+import dj_database_url
 # The top directory for this project. Contains requirements/, manage.py,
 # and README.rst, a textsage directory with settings etc (see
 # PROJECT_PATH), as well as a directory for each Django app added to this
@@ -24,16 +24,24 @@ MANAGERS = ADMINS
 ALLOWED_HOSTS = [
   '.textsageone.herokuapp.com'
 ]
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'textsage.db',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
-    }
-}
+#DATABASES = {
+ #   'default': {
+ #       'ENGINE': 'django.db.backends.sqlite3',
+  #      'NAME': 'textsage.db',
+   #     'USER': '',
+    #    'PASSWORD': '',
+     #   'HOST': '',
+   #     'PORT': '',
+   # }
+#}
+
+# Update database configuration with $DATABASE_URL.
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+
+DATABASES['default'] =  dj_database_url.config()
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
